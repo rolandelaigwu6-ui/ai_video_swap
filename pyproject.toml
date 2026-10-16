@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synthetic-media-lab"
+version = "0.1.0"
+description = "Modular authorized synthetic-media research pipeline"
+requires-python = ">=3.11"
+dependencies = ["opencv-python-headless>=4.10,<5", "numpy>=2,<3", "imageio-ffmpeg>=0.6,<1", "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "python-multipart>=0.0.18"]
+
+[project.optional-dependencies]
+neural = ["onnxruntime>=1.20,<2", "onnx>=1.17,<2"]
+remote = ["gradio-client>=2.7,<3"]
+
+[project.scripts]
+synthetic-media = "synthetic_media.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+synthetic_media = ["studio.html", "models/yunet/*.onnx", "models/yunet/LICENSE", "models/yunet/PROVENANCE.md"]

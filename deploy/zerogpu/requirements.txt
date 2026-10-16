@@ -1,0 +1,9 @@
+# Gradio, spaces and torch are supplied by the ZeroGPU platform.
+diffusers==0.41.0
+transformers==5.20.0
+accelerate==1.15.0
+safetensors>=0.6,<1
+opencv-python-headless>=4.10,<5
+onnxruntime==1.30.0
+numpy>=2,<3
+imageio-ffmpeg>=0.6,<1
